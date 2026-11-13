@@ -1,0 +1,720 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@800;900&display=swap");
+@font-face{font-family:"OLW Digits";src:url("fonts/so-nunito.woff2") format("woff2");unicode-range:U+0030-0039;font-display:swap}
+:root{--cream:#fdf6ea;--paper:#fffaf2;--ink:#46302a;--rose:#c45460;--leaf:#5c7a52;--line:#ecdcc4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:"Nunito",system-ui,sans-serif;font-size:18px;line-height:1.65}
+a{color:var(--rose)}
+header.site{text-align:center;padding:22px 16px 10px}
+header.site .name{font-family:"Fredoka","Nunito",system-ui,sans-serif;font-weight:600;font-size:34px;margin:0;color:#2E5E4E;text-decoration:none}
+header.site .tag{letter-spacing:.3em;font-size:12px;font-weight:700;text-transform:uppercase;color:#E0675A;margin:2px 0 0}
+main{max-width:720px;margin:0 auto;padding:8px 16px 48px}
+.hero{text-align:center;margin:24px 0 32px}
+.hero h1{font-family:"Fredoka","Nunito",system-ui,sans-serif;font-weight:600;color:#2E5E4E;font-size:40px;line-height:1.15;margin:0 0 8px}
+.hero p{margin:0;color:var(--rose)}
+.card{display:block;background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:0 0 22px;text-decoration:none;color:var(--ink);box-shadow:0 2px 8px rgba(70,48,42,.06)}
+.card img{width:100%;display:block}
+.card .txt{padding:14px 18px 18px}
+.card h2{font-family:"OLW Digits","Sorts Mill Goudy",Georgia,serif;font-weight:400;font-size:26px;margin:0 0 4px;line-height:1.2}
+.card p{margin:0;font-size:16px;color:#6b5a50}
+article h1{font-family:"OLW Digits","Sorts Mill Goudy",Georgia,serif;font-weight:400;font-size:40px;line-height:1.15;margin:20px 0 10px}
+article img{width:100%;border-radius:14px;display:block;margin:12px 0 6px}
+.cap{font-size:14px;color:#8a7a70;margin:0 0 20px}
+.laugh{background:#fbe9e6;border-left:4px solid var(--rose);padding:12px 16px;border-radius:8px;font-style:italic}
+h2{font-family:"OLW Digits","Sorts Mill Goudy",Georgia,serif;font-weight:400;font-size:28px;margin:30px 0 6px}
+.box{background:var(--paper);border:1px dashed #d9c3a2;border-radius:12px;padding:14px 18px;margin:18px 0}
+.box h3{margin:0 0 6px;font-size:18px;color:var(--leaf)}
+.safe{background:#eef3e9;border-radius:12px;padding:12px 16px;font-size:16px}
+.src{font-size:14px;color:#7a6a60}
+footer{text-align:center;font-size:14px;color:#8a7a70;padding:24px 16px 40px;border-top:1px solid var(--line);max-width:720px;margin:0 auto}
+@media (max-width:520px){.hero h1,article h1{font-size:32px}body{font-size:17px}}
+.sub{font-size:20px;color:var(--rose);margin:0 0 14px}
+.brand{display:inline-flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink)}
+.brand img{width:92px;height:92px}
+.brand .name{display:block;font-family:"Fredoka","Nunito",system-ui,sans-serif;font-weight:600;color:#2E5E4E;font-size:58px;line-height:1;text-align:left}
+.brand .tag{display:block;letter-spacing:.3em;font-size:13px;font-weight:700;text-transform:uppercase;color:#E0675A;margin-top:8px;text-align:left}
+.menu{position:sticky;top:0;z-index:5;background:var(--cream);border-bottom:1px solid var(--line);display:flex;gap:8px;overflow-x:auto;padding:10px 16px;justify-content:safe center;scrollbar-width:none}
+.menu::-webkit-scrollbar{display:none}
+.menu a{flex:none;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:15px;font-weight:700}
+.menu a:hover{background:#fbe9e6;color:var(--rose)}
+main.wide{max-width:1120px}
+.home .hero{margin:22px 0 8px}.home .hero h1{font-size:34px}
+.shelf{margin:26px 0;scroll-margin-top:64px}
+.shelf-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:0 0 10px}
+.shelf-h h2{margin:0;font-size:28px}.shelf-h p{margin:0;font-size:15px;color:#8a7a70}
+.row{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
+.tile{flex:0 0 240px;scroll-snap-align:start;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.tile img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+.tile span{display:block;padding:10px 12px 12px;font-weight:700;font-size:15px;line-height:1.35}
+.tile:hover{box-shadow:0 4px 14px rgba(70,48,42,.12)}
+@media (max-width:520px){.brand .name{font-size:46px}.brand img{width:68px;height:68px}.tile{flex-basis:68vw}.home .hero h1{font-size:28px}}
+.mmenu{display:none}
+.home .hero h1 span{white-space:nowrap}
+@media (max-width:640px){
+.menu{display:none}
+.mmenu{display:block;position:sticky;top:0;z-index:5;background:var(--cream);border-bottom:1px solid var(--line);padding:8px 16px}
+.mmenu summary{list-style:none;cursor:pointer;font-weight:700;font-size:17px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:var(--paper);display:inline-block}
+.mmenu summary::-webkit-details-marker{display:none}
+.mmenu div{display:flex;flex-direction:column;margin-top:8px}
+.mmenu div a{padding:11px 6px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);font-weight:700}
+.home .hero h1{font-size:26px;line-height:1.25}
+.home .hero h1 span,.home .hero p span{display:block}
+.home .hero p{font-size:16px}
+}
+.back{margin:14px 0 4px}.back a{display:inline-block;text-decoration:none;font-weight:700;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:7px 16px;font-size:15px}.back a:hover{color:var(--rose);background:#fbe9e6}
+.hero-img{max-width:480px;margin:6px 0 14px}
+.box img{margin:12px 0 0;border-radius:10px}
+.social{margin:0 0 14px;display:flex;gap:10px;justify-content:center;align-items:center}.social span{font-weight:700;color:var(--ink);margin-right:4px}
+.si{width:38px;height:38px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s}.si svg{width:19px;height:19px}.si:hover{transform:scale(1.12)}
+.si-instagram{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285AEB 90%)}.si-tiktok{background:#000}.si-pinterest{background:#E60023}.si-facebook{background:#1877F2}.si-etsy{background:#F1641E}
+.rail{display:none}
+@media (min-width:900px){.rail{display:flex;flex-direction:column;gap:10px;position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:6}}
+.shelf{padding:18px 18px 12px;border-radius:22px;background-repeat:repeat}
+#questions{background-color:#eef5e6;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27240%27%20height%3D%27240%27%3E%3Cg%20fill%3D%27%235c7a52%27%20fill-opacity%3D%27.07%27%3E%3Cpath%20d%3D%27M20%2030c10-12%2024-8%2026%202-12%206-20%206-26-2z%27/%3E%3Cpath%20d%3D%27M80%2090c8-10%2020-7%2022%202-10%205-17%205-22-2z%27/%3E%3Ccircle%20cx%3D%2795%27%20cy%3D%2725%27%20r%3D%273%27/%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%2795%27%20r%3D%272.5%27/%3E%3C/g%3E%3Cg%20fill%3D%27%23c45460%27%20fill-opacity%3D%27.07%27%3E%3Cpath%20d%3D%27M70%2040c-6-8-14-4-12%202%202%205%208%205%2012-2zm0%200c6-8%2014-4%2012%202-2%205-8%205-12-2z%27/%3E%3C/g%3E%3C/svg%3E")}
+#books{background-color:#fdecec;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27220%27%20height%3D%27220%27%3E%3Cg%20fill%3D%27%23c45460%27%20fill-opacity%3D%27.07%27%3E%3Cpath%20d%3D%27M30%2030c-8%200-10%208-6%2014%203%205%206%208%206%208s3-3%206-8c4-6%202-14-6-14z%27/%3E%3Cpath%20d%3D%27M80%2075c-7%200-9%207-5%2012%202%204%205%207%205%207s3-3%205-7c4-5%202-12-5-12z%27/%3E%3C/g%3E%3Cg%20fill%3D%27%235c7a52%27%20fill-opacity%3D%27.07%27%3E%3Cpath%20d%3D%27M26%2028l4-5%204%205z%27/%3E%3Cpath%20d%3D%27M76%2073l4-5%204%205z%27/%3E%3C/g%3E%3C/svg%3E")}
+#parents{background-color:#eceef8;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27240%27%20height%3D%27240%27%3E%3Cg%20fill%3D%27%2346508a%27%20fill-opacity%3D%27.07%27%3E%3Cpath%20d%3D%27M30%2020l2%206%206%202-6%202-2%206-2-6-6-2%206-2z%27/%3E%3Cpath%20d%3D%27M90%2070l1.5%204.5%204.5%201.5-4.5%201.5-1.5%204.5-1.5-4.5-4.5-1.5%204.5-1.5z%27/%3E%3Cpath%20d%3D%27M85%2018a12%2012%200%201%200%2010%2018%2010%2010%200%201%201-10-18z%27/%3E%3Ccircle%20cx%3D%2740%27%20cy%3D%2790%27%20r%3D%272.5%27/%3E%3C/g%3E%3C/svg%3E")}
+#home{background-color:#fdf1df;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27240%27%20height%3D%27240%27%3E%3Cg%20fill%3D%27%23d68c3c%27%20fill-opacity%3D%27.07%27%3E%3Cpath%20d%3D%27M20%2040l15-12%2015%2012v14H20z%27/%3E%3Cpath%20d%3D%27M85%2095c-6-6-14-1-10%205l10%208%2010-8c4-6-4-11-10-5z%27/%3E%3Ccircle%20cx%3D%2795%27%20cy%3D%2730%27%20r%3D%273%27/%3E%3C/g%3E%3C/svg%3E")}
+#classrooms{background-color:#e9f3ef;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27240%27%20height%3D%27240%27%3E%3Cg%20fill%3D%27%233f6f60%27%20fill-opacity%3D%27.08%27%3E%3Cg%20transform%3D%27rotate%28-30%2060%2060%29%27%3E%3Crect%20x%3D%2730%27%20y%3D%2754%27%20width%3D%2752%27%20height%3D%2712%27%20rx%3D%272%27%2F%3E%3Cpath%20d%3D%27M82%2054l14%206-14%206z%27%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%27rotate%2820%20170%20170%29%27%3E%3Crect%20x%3D%27130%27%20y%3D%27162%27%20width%3D%2780%27%20height%3D%2716%27%20rx%3D%272%27%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%20stroke%3D%27%23e9f3ef%27%20stroke-width%3D%272%27%20transform%3D%27rotate%2820%20170%20170%29%27%3E%3Cpath%20d%3D%27M140%20162v6M150%20162v4M160%20162v6M170%20162v4M180%20162v6M190%20162v4M200%20162v6%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E")}
+#paper{background-color:#fbecf4;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27220%27%20height%3D%27220%27%3E%3Cg%20fill-opacity%3D%27.07%27%3E%3Crect%20x%3D%2720%27%20y%3D%2720%27%20width%3D%2716%27%20height%3D%2716%27%20fill%3D%27%23c45460%27%20transform%3D%27rotate%2820%2024%2024%29%27/%3E%3Crect%20x%3D%2775%27%20y%3D%2730%27%20width%3D%2714%27%20height%3D%2714%27%20fill%3D%27%23d68c3c%27%20transform%3D%27rotate%28-15%2078%2033%29%27/%3E%3Ccircle%20cx%3D%2740%27%20cy%3D%2780%27%20r%3D%274%27%20fill%3D%27%235c7a52%27/%3E%3Crect%20x%3D%2785%27%20y%3D%2785%27%20width%3D%2716%27%20height%3D%2716%27%20fill%3D%27%2346508a%27%20transform%3D%27rotate%2835%2089%2089%29%27/%3E%3C/g%3E%3C/svg%3E")}
+#yours{background-color:#e9f4fb;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27260%27%20height%3D%27220%27%3E%3Cg%20fill%3D%27%234b7fa6%27%20fill-opacity%3D%27.07%27%3E%3Cpath%20d%3D%27M20%2040a10%2010%200%200%201%2018-6%208%208%200%200%201%2014%206z%27/%3E%3Cpath%20d%3D%27M80%2070h30a6%206%200%200%201%206%206v10a6%206%200%200%201-6%206H95l-8%207v-7h-7a6%206%200%200%201-6-6V76a6%206%200%200%201%206-6z%27/%3E%3Ctext%20x%3D%2792%27%20y%3D%2787%27%20font-family%3D%27Arial%27%20font-size%3D%2714%27%20font-weight%3D%27700%27%20fill%3D%27%23fff%27%3E%3F%3C/text%3E%3C/g%3E%3C/svg%3E")}
+
+/* section corner art + matching menu colours */
+.shelf{position:relative;overflow:hidden}
+.art{position:absolute;top:6px;right:10px;width:250px;height:auto;pointer-events:none}
+.shelf-h{min-height:128px;padding-right:260px;align-content:center}
+.row{position:relative}
+@media (max-width:640px){.art{width:150px;top:4px;right:4px}.shelf-h{min-height:92px;padding-right:150px}.shelf-h h2{font-size:24px}}
+.menu a[href="strange-questions.html"],.mmenu a[href="strange-questions.html"]{background:#eef5e6;color:#4f7a44;border-color:#4f7a4455}
+.menu a[href="strange-questions.html"]:hover{background:#4f7a44;color:#fff}
+#questions .shelf-h h2{color:#4f7a44}
+.menu a[href="books.html"],.mmenu a[href="books.html"]{background:#fdecec;color:#b8404c;border-color:#b8404c55}
+.menu a[href="books.html"]:hover{background:#b8404c;color:#fff}
+#books .shelf-h h2{color:#b8404c}
+.menu a[href="parents.html"],.mmenu a[href="parents.html"]{background:#eceef8;color:#46508a;border-color:#46508a55}
+.menu a[href="parents.html"]:hover{background:#46508a;color:#fff}
+#parents .shelf-h h2{color:#46508a}
+.menu a[href="#home"],.mmenu a[href="#home"]{background:#fdf1df;color:#b8662a;border-color:#b8662a55}
+.menu a[href="#home"]:hover{background:#b8662a;color:#fff}
+#home .shelf-h h2{color:#b8662a}
+.menu a[href="classrooms.html"],.mmenu a[href="classrooms.html"]{background:#e9f3ef;color:#2f6a5a;border-color:#2f6a5a55}
+.menu a[href="classrooms.html"]:hover{background:#2f6a5a;color:#fff}
+#classrooms .shelf-h h2{color:#2f6a5a}
+.menu a[href="paper-play.html"],.mmenu a[href="paper-play.html"]{background:#fbecf4;color:#b04a86;border-color:#b04a8655}
+.menu a[href="paper-play.html"]:hover{background:#b04a86;color:#fff}
+#paper .shelf-h h2{color:#b04a86}
+.menu a[href="#yours"],.mmenu a[href="#yours"]{background:#e9f4fb;color:#3a74a6;border-color:#3a74a655}
+.menu a[href="#yours"]:hover{background:#3a74a6;color:#fff}
+#yours .shelf-h h2{color:#3a74a6}
+.mmenu div a{border-radius:12px;margin:3px 0;border:1px solid;padding:10px 14px}
+@media (min-width:641px){.art{top:auto;bottom:0;right:0;width:min(340px,31%)}.shelf-h{min-height:0;padding-right:0}.shelf{min-height:250px}.row{z-index:1}}
+@media (max-width:640px){.mmenu{display:none!important}.menu{display:grid!important;grid-template-columns:1fr 1fr;gap:6px;position:static;padding:10px 16px;overflow:visible}.menu a{text-align:center;font-size:14px;padding:7px 6px;white-space:nowrap}.menu a:last-child{grid-column:1 / -1;justify-self:center;width:50%}}
+@media (max-width:640px){.shelf-h h2{line-height:1.15}.shelf-h p{font-size:14px;line-height:1.4}}
+.mi{width:16px;height:16px;vertical-align:-3px;margin-right:6px;flex:none}.menu a{display:inline-flex;align-items:center;justify-content:center}
+
+/* v3: small art top-right beside the title, faint sparse wallpaper */
+.art{top:12px!important;bottom:auto!important;right:14px!important;width:150px!important}
+.shelf-h{min-height:120px!important;padding-right:170px!important;align-content:center}
+.shelf{min-height:0!important}
+@media (max-width:640px){.art{width:96px!important;top:10px!important;right:10px!important}.shelf-h{min-height:96px!important;padding-right:104px!important}}
+
+/* v4: art small, tucked into the top-right corner */
+.art{top:6px!important;right:6px!important;width:84px!important}
+.shelf-h{min-height:0!important;padding-right:92px!important}
+@media (max-width:640px){.art{width:70px!important;top:6px!important;right:6px!important}.shelf-h{padding-right:74px!important}}
+@media (max-width:640px){.shelf{padding-top:14px!important}.shelf-h{display:block!important;margin-bottom:10px}.shelf-h h2{line-height:1.1!important;margin:0!important}.shelf-h p{margin:3px 0 0!important}.art{top:8px!important;width:64px!important}}
+.art{top:4px!important;right:8px!important;width:112px!important}.shelf-h{padding-right:124px!important}
+@media (max-width:640px){.art{top:2px!important;right:4px!important;width:84px!important}.shelf-h{padding-right:86px!important}}
+@media (max-width:640px){.art{width:74px!important;top:4px!important}.shelf-h{padding-right:80px!important}}
+.btn{display:inline-block;background:#2f6a5a;color:#fff!important;text-decoration:none;font-weight:700;padding:10px 20px;border-radius:999px}.btn:hover{opacity:.9}
+@media (min-width:641px){.art{width:96px!important;top:2px!important;z-index:0}.row{position:relative;z-index:2}}
+/* "See all" tile at the end of a shelf */
+.tile.more{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:#fff;border:2px dashed #4f7a4466;color:#4f7a44;min-height:180px;text-align:center}
+.tile.more b{font-size:34px;line-height:1}
+.tile.more span{padding:0 16px}
+.list-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin:18px 0}
+.list-grid .tile{flex:none}
+
+/* Playful article look (owner 1/11: posts more colourful, baby-friendly) */
+article{--k:#c45460;--kbg:#fdeef0}
+body.k-juni article{--k:#a8552e;--kbg:#fdf0e3}
+body.k-milo article{--k:#2f6fa3;--kbg:#e8f3fb}
+body.k-poppy article{--k:#4f8a3c;--kbg:#eef7e6}
+body.k-ollie article{--k:#33457e;--kbg:#ecefff}
+body.k-kiki article{--k:#c0392b;--kbg:#fdecea}
+article h2{font-family:"Nunito",system-ui,sans-serif;font-weight:800;color:var(--k);font-size:25px;line-height:1.2;margin:34px 0 10px}
+article h2::after{content:"";display:block;width:54px;height:6px;border-radius:6px;margin-top:6px;background:radial-gradient(circle,var(--k) 3px,transparent 3.5px) 0 0/12px 6px repeat-x;opacity:.55}
+article h1{color:var(--ink)}
+article .sub{font-family:"Nunito",system-ui,sans-serif;color:var(--k)}
+article .box{background:var(--kbg);border:2px solid color-mix(in srgb,var(--k) 25%,transparent);border-radius:18px}
+article .box h3{font-family:"Nunito",system-ui,sans-serif;font-weight:800;color:var(--k);font-size:20px}
+article .laugh{background:var(--kbg);border-left-color:var(--k);border-radius:14px}
+article .cap{color:#8a7a70}
+.qs{display:flex;flex-wrap:wrap;gap:10px}
+.qs p,.qs a{margin:0!important;background:#fff;border:2px solid color-mix(in srgb,var(--k) 35%,transparent);border-radius:999px;padding:7px 16px;font-family:"Nunito",system-ui,sans-serif;font-size:17px;color:var(--ink);text-decoration:none}
+.qs a{background:var(--k);color:#fff;border-color:var(--k)}
+.qs a::after{content:" →"}
+.qs a:hover{filter:brightness(1.1)}
+@media (min-width:641px){.art{width:108px!important}#parents .art{width:132px!important;top:0!important}}@media (max-width:640px){.art{width:81px!important}#parents .art{width:100px!important;top:2px!important}.shelf-h{padding-right:96px!important}}
+/* Bottom page navigation: back, jump menu, next */
+.pnav{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:26px 0 8px;padding:14px;background:var(--paper);border:1px solid var(--line);border-radius:18px}
+.pnav a,.pnav select{font:700 15px "Nunito",system-ui,sans-serif;color:var(--ink);text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px}
+.pnav select{flex:1 1 220px;min-width:0;appearance:auto;cursor:pointer}
+.pnav .pn-next{background:var(--rose);border-color:var(--rose);color:#fff;margin-left:auto}
+.pnav a:hover{filter:brightness(1.05)}
+@media (max-width:520px){.pnav{flex-direction:column;align-items:stretch}.pnav select{flex:0 0 auto}.pnav a,.pnav select{text-align:center;width:100%}.pnav .pn-next{margin-left:0}}
+/* Avoid 1-2 word last lines */
+p,li,.sub,.cap{text-wrap:pretty}
+h1,h2,h3,.tile span{text-wrap:balance}
+@media (min-width:641px){.menu{flex-wrap:wrap;justify-content:center;overflow:visible;row-gap:8px}}
+@media (min-width:641px) and (max-width:1199px){.menu{padding:10px max(16px,calc((100% - 720px)/2))}}
+/* Numbered steps and question lists (no plain dots) */
+ol.steps,ol.qlist{list-style:none;counter-reset:n;padding:0;margin:14px 0}
+ol.steps li,ol.qlist li{counter-increment:n;position:relative;padding:10px 14px 10px 54px;margin:0 0 10px;background:var(--kbg,#fdeef0);border-radius:14px;min-height:44px}
+ol.steps li::before,ol.qlist li::before{content:counter(n);position:absolute;left:12px;top:9px;width:30px;height:30px;border-radius:50%;background:var(--k,#c45460);color:#fff;font:800 16px/30px "Nunito",system-ui,sans-serif;text-align:center}
+ol.qlist li{background:#fff;border:1px solid var(--line)}
+body.k-home article{--k:#b8662a;--kbg:#fdf1df}
+body.k-school article{--k:#2f6a5a;--kbg:#e9f3ef}
+body.k-grown article{--k:#46508a;--kbg:#eceef8}
+/* 1/11 layout variety: fewer boxes */
+article h2::after{display:none}
+.hero-img.center{display:block;margin:10px auto 18px;max-width:min(100%,560px)}
+article .pull{font-family:"OLW Digits","Sorts Mill Goudy",Georgia,serif;font-style:italic;font-size:27px;line-height:1.3;color:var(--k);text-align:center;margin:26px 8%}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:12px 0 6px}
+.trio div{font-size:16px;line-height:1.4}
+.trio b{display:block;font:900 44px/1 "Nunito",system-ui,sans-serif;color:var(--k);margin-bottom:4px}
+article .lead{font-family:"Nunito",system-ui,sans-serif;font-weight:800;font-size:22px;color:var(--k);margin:8px 0 4px}
+ol.plain{padding-left:26px;margin:0 0 8px}
+ol.plain li{padding:7px 0;border-bottom:1px solid var(--line)}
+ol.plain li::marker{color:var(--k);font-weight:800;font-family:"Nunito",system-ui,sans-serif}
+figure.side{width:42%;margin:6px 0 12px;text-align:center}
+figure.side.right{float:right;margin-left:22px;transform:rotate(2deg)}
+figure.side.left{float:left;margin-right:22px;transform:rotate(-2deg)}
+figure.side img{border-radius:14px;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+figure.side figcaption{font-size:14px;color:var(--muted,#8a7a70);margin-top:6px;font-style:italic}
+article h2{clear:both}
+.turn{clear:both;background:var(--kbg);border-radius:22px;padding:6px 24px 18px;margin:34px 0 14px;text-align:center}
+.turn h2{margin-top:18px}
+@media (max-width:520px){.trio{gap:10px}.trio div{font-size:15px}.trio b{font-size:36px}figure.side{width:46%}article .pull{font-size:23px;margin:22px 2%}}
+.chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:16px 0}
+.chips li{background:#fff;border:1.5px solid color-mix(in srgb,var(--k) 35%,transparent);color:var(--k);border-radius:999px;padding:5px 14px;font:700 15px/1.3 "Nunito",system-ui,sans-serif}
+article .pull-lab{text-align:center;font:800 14px/1 "Nunito",system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--muted,#8a7a70);margin:30px 0 -14px}
+article .note{border-left:4px solid var(--k);padding:2px 0 2px 16px;margin:22px 0}
+article .note h3,.cards2 h3,.cards3 h3{font-family:"Nunito",system-ui,sans-serif;font-weight:800;color:var(--k);font-size:19px;margin:0 0 4px}
+article .note p{margin:0}
+.cards2,.cards3{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 26px;margin:14px 0 8px;counter-reset:c}
+.cards3{grid-template-columns:repeat(3,1fr)}
+.cards2 .c,.cards3 .c{border-top:3px solid color-mix(in srgb,var(--k) 40%,transparent);padding-top:10px}
+.cards2 .c p,.cards3 .c p{margin:0;font-size:16px;line-height:1.5}
+.num .c{counter-increment:c}
+.num .c h3::before{content:counter(c);display:block;font:900 34px/1 "Nunito",system-ui,sans-serif;color:var(--k);margin-bottom:4px}
+@media (max-width:640px){.cards3{grid-template-columns:1fr}.cards2{grid-template-columns:1fr}}
+article .safe{background:none!important;border:0!important;padding:0!important;font-size:15px;color:var(--muted,#8a7a70);margin:18px 0}
+/* 1/11 08:35 fixes: straight side pictures, wrapped lines align with their own text */
+figure.side.right,figure.side.left{transform:none}
+ol.plain{display:flow-root;list-style:none;padding-left:0;counter-reset:pl}
+ol.plain[start="6"]{counter-reset:pl 5}
+ol.plain li{counter-increment:pl;display:grid;grid-template-columns:30px 1fr;align-items:start}
+ol.plain li::before{content:counter(pl) ".";color:var(--k);font:800 17px/1.6 "Nunito",system-ui,sans-serif}
+@media (max-width:640px){figure.side,figure.side.left,figure.side.right{float:none;width:78%;margin:16px auto}}
+/* 1/11 owner: post titles in a heading font, capitals */
+article h1{font-family:"Nunito",system-ui,sans-serif!important;font-weight:900!important;text-transform:uppercase;letter-spacing:.02em;font-size:33px!important;line-height:1.12!important;color:var(--k,#46302a)!important;text-wrap:balance}
+@media (max-width:520px){article h1{font-size:26px!important}}
+article .box{display:flow-root}
+figure.portrait-side{width:38%;margin-top:4px}
+figure.portrait-side img{box-shadow:none;border-radius:18px}
+.qgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin:12px 0 16px}
+.qgrid .q{display:flex;flex-direction:column;background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--line);text-decoration:none;color:var(--ink)}
+.qgrid .q img{aspect-ratio:3/2;object-fit:cover;width:100%;margin:0;border-radius:0}
+.qgrid .q span{padding:8px 10px 10px;font:700 15px/1.35 "Nunito",system-ui,sans-serif}
+.qgrid .q b{margin:auto 10px 10px;background:var(--k);color:#fff;border-radius:999px;padding:5px 10px;font:800 13px/1.2 "Nunito",system-ui,sans-serif;text-align:center}
+@media (max-width:640px){.qgrid{grid-template-columns:1fr 1fr}figure.portrait-side{width:70%}}
+/* 1/11 08:59: picture size follows the text beside it; lone pictures centred and full width */
+figure.side.sz-s{width:30%}figure.side.sz-m{width:38%}figure.side.sz-l{width:44%}
+article img.hero-img{display:block;margin:10px auto 18px;max-width:100%}
+article img.hero-img[src*="gu-"]{width:100%}
+@media (max-width:640px){figure.side.sz-s,figure.side.sz-m,figure.side.sz-l{width:78%}}
+article img.hero-img[src*="home-"]{width:100%}
+article .how{margin-top:8px;font-weight:700;font-size:15px}article .how a{color:var(--k)}
+article .cards2,article .cards3,article .box,article .turn{clear:both}
+article img.mini-c{display:block;clear:both;width:100%;max-width:440px;margin:14px auto 18px;border-radius:14px}
+
+.hero p.about{max-width:640px;margin:14px auto 0;font-size:16px;line-height:1.55;color:#6b5a50}.hero p.about a{color:var(--rose);font-weight:700;white-space:nowrap}.hero p.about a::after{content:" →"}
+.shelf p.grp{margin:6px 0 6px;font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#8a7a70}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 16px}.chips button{font:inherit;font-size:15px;font-weight:700;padding:6px 14px;border-radius:99px;border:1.5px solid #4f7a4466;background:#fff;color:#4f7a44;cursor:pointer}.chips button.on{background:#4f7a44;color:#fff;border-color:#4f7a44}
+article .stat{clear:both;background:var(--kbg);border-radius:22px;padding:26px 22px 22px;text-align:center;margin:18px 0 28px}
+article .stat b{display:block;font-family:"OLW Digits","Sorts Mill Goudy",Georgia,serif;font-weight:400;font-size:64px;line-height:1;color:var(--k);margin-bottom:8px}
+article .stat span{font-size:17px;color:#6b5a50}
+/* clickable shelf titles + see-all button (1/11) */
+.shelf-h h2 a{color:inherit;text-decoration:none;border-bottom:2px solid transparent}
+.shelf-h h2 a:hover{border-bottom-color:currentColor}
+.btn-all{display:inline-block;margin:6px 0 0;padding:7px 16px;border-radius:999px;background:#fff;border:1.5px solid currentColor;font:800 14px/1.2 "Nunito",system-ui,sans-serif;text-decoration:none;color:#46302a;white-space:nowrap}
+.btn-all:hover{background:#46302a;color:#fff}
+#questions .btn-all{color:#4f7a44}#books .btn-all{color:#b8404c}#paper .btn-all{color:#b04a86}#parents .btn-all{color:#46508a}#classrooms .btn-all{color:#2f6a5a}
+#questions .btn-all:hover,#books .btn-all:hover,#paper .btn-all:hover,#parents .btn-all:hover,#classrooms .btn-all:hover{color:#fff;background:currentColor}
+article h2 + .list-grid{margin-top:8px}
+/* section titles in the Just Imagine book font (1/11) */
+.shelf-h h2,.shelf-h h2 a{font-family:"Fredoka","Nunito",system-ui,sans-serif;font-weight:600;font-size:34px;letter-spacing:.2px}
+@media (max-width:640px){.shelf-h h2,.shelf-h h2 a{font-size:27px}}
+body.k-juni h1,body.k-home h1,body.k-grown h1,body.k-school h1{}
+.tile .age{display:block;font-style:normal;font-weight:700;font-size:12.5px;color:#8a6f9e;margin-top:4px;letter-spacing:.02em}
+.age-chips{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:14px 0 4px}
+.age-chips span{font-weight:800;font-size:14px;color:#8a7a70;text-transform:uppercase;letter-spacing:.06em}
+.age-chips button{font:inherit;font-weight:700;font-size:15px;padding:6px 16px;border-radius:999px;border:1.5px solid #c9a6d6;background:#fff;color:#7a4f8f;cursor:pointer}
+.age-chips button.on{background:#7a4f8f;border-color:#7a4f8f;color:#fff}
+.tile[hidden],.pgrp[hidden]{display:none}
+/* Picture placeholder (picture still to be made) */
+.ph{border:2px dashed var(--line);border-radius:14px;padding:28px 16px;margin:16px 0;text-align:center;color:#8a7a70;font-style:italic;background:var(--paper)}
+figure.side .ph{margin:0;padding:18px 10px;font-size:14px}
+/* Step stickers: small cut-out pictures in a row with a short caption, no boxes */
+.stickers{list-style:none;display:flex;flex-wrap:wrap;gap:18px 22px;padding:0;margin:16px 0 10px;counter-reset:st}
+.stickers li{flex:1 1 140px;max-width:220px;counter-increment:st;text-align:center;font-size:16px;line-height:1.45}
+.stickers li img,.stickers li .ph{display:block;width:110px;height:110px;margin:0 auto 6px;object-fit:contain}
+.stickers li .ph{padding:8px;font-size:12px;line-height:1.3;display:flex;align-items:center;justify-content:center;border-radius:50%}
+.stickers li b{display:block;color:var(--k);font:800 15px/1.3 "Nunito",system-ui,sans-serif}
+.stickers li b::before{content:counter(st) ". "}
+/* Picture beside a short numbered list */
+.howto{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:18px;align-items:center;margin:14px 0}
+.howto .ph{margin:0}
+@media (max-width:560px){.howto{grid-template-columns:1fr}}
+/* Solar system scale strip (Sun at left, Pluto at right) */
+.scale{position:relative;height:118px;margin:22px 4px 8px}
+.scale::before{content:"";position:absolute;left:0;right:0;top:58px;height:6px;border-radius:3px;background:repeating-linear-gradient(90deg,#fff 0 10px,var(--line) 10px 11px);border:1px solid var(--line)}
+.scale .pl{position:absolute;top:61px;transform:translate(-50%,-50%);text-align:center;width:0}
+.scale .pl i{display:block;border-radius:50%;margin:0 auto;box-shadow:0 0 0 2px #fff}
+.scale .pl span{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;font:700 13px/1.2 "Nunito",system-ui,sans-serif;color:var(--ink)}
+.scale .pl span small{display:block;font-weight:400;color:#8a7a70}
+.scale .pl.up span{bottom:16px}.scale .pl.dn span{top:16px}
+.scale-cap{font-size:14px;color:#8a7a70;text-align:center;margin:0 0 18px}
+.scale .pl.start span{left:-8px;transform:none}.scale .pl.end span{left:auto;right:-8px;transform:none}
+@media (max-width:520px){.stickers{gap:14px 10px}.stickers li{flex:1 1 92px;font-size:15px}.stickers li img,.stickers li .ph{width:88px;height:88px}}
+/* Number sticker callout (draft for owner review): big number pops out of the box like a sticker,
+   a small picture on the other side, the sentence in between */
+.statpop{position:relative;clear:both;display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:14px;align-items:center;
+  background:var(--kbg);border-radius:20px;padding:46px 20px 20px 22px;margin:38px 0 28px}
+.statpop .num{position:absolute;top:-24px;left:-8px;transform:rotate(-4deg);background:#fff;border:3px solid #fff;
+  box-shadow:0 3px 10px rgba(70,48,42,.18);border-radius:16px;padding:2px 16px 4px;
+  font:600 46px/1.1 "Fredoka","Nunito",system-ui,sans-serif;color:var(--k)}
+.statpop .num small{font-size:20px;margin-left:4px}
+.statpop p{margin:0;font-size:17px;line-height:1.5}
+.statpop p b{color:var(--k)}
+.statpop .pic{width:120px;height:120px;object-fit:cover;border-radius:50%;border:4px solid #fff;
+  box-shadow:0 3px 10px rgba(70,48,42,.15);transform:rotate(3deg);margin-bottom:-36px}
+@media (max-width:480px){.statpop{grid-template-columns:minmax(0,1fr) 88px}.statpop .pic{width:88px;height:88px}.statpop .num{font-size:38px}}
+/* Highlight toolkit (owner 3/11/2026): 1-2 per post, never the same kind in two posts in a row */
+/* 1. Taped fact note with a polaroid picture */
+.fact{position:relative;clear:both;background:#fffdf6;border:1px solid var(--line);border-radius:4px;padding:24px 22px 20px 150px;margin:40px 8px 32px;
+  transform:rotate(-1deg);box-shadow:0 5px 14px rgba(70,48,42,.12);min-height:150px}
+.fact::before{content:"";position:absolute;top:-13px;left:50%;width:120px;height:26px;transform:translateX(-50%) rotate(3deg);
+  background:color-mix(in srgb,var(--k) 28%,#fff);opacity:.9;box-shadow:0 1px 3px rgba(70,48,42,.12)}
+.fact .pic{position:absolute;left:18px;top:22px;width:112px;height:112px;object-fit:cover;border:6px solid #fff;border-bottom-width:18px;
+  box-shadow:0 3px 9px rgba(70,48,42,.2);transform:rotate(-5deg);margin:0}
+.fact .lab{display:block;font:800 13px/1.3 "Nunito",system-ui,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--k);margin-bottom:4px}
+.fact p{margin:0;font-size:17px;line-height:1.5}
+@media (max-width:520px){.fact{padding:22px 18px 18px 18px;min-height:0}.fact .pic{position:static;float:right;width:84px;height:84px;margin:0 0 6px 12px;border-bottom-width:14px}}
+/* 2. Big quote with a round picture breaking the edge */
+.quotepop{position:relative;clear:both;margin:40px 0 30px;padding:26px 150px 24px 30px;border-radius:24px;
+  background:color-mix(in srgb,var(--kbg) 70%,#fff);border:2px dashed color-mix(in srgb,var(--k) 30%,transparent)}
+.quotepop::before{content:"\201C";position:absolute;top:-34px;left:14px;font:700 96px/1 "OLW Digits","Sorts Mill Goudy",Georgia,serif;color:var(--k);opacity:.45}
+.quotepop p{margin:0;font:italic 23px/1.35 "OLW Digits","Sorts Mill Goudy",Georgia,serif;color:var(--k)}
+.quotepop p small{display:block;margin-top:8px;font:700 14px/1.3 "Nunito",system-ui,sans-serif;font-style:normal;color:#8a7a70}
+.quotepop .pic{position:absolute;right:-10px;bottom:-22px;width:128px;height:128px;border-radius:50%;object-fit:cover;border:5px solid #fff;
+  box-shadow:0 4px 12px rgba(70,48,42,.18);transform:rotate(4deg);margin:0}
+@media (max-width:520px){.quotepop{padding:24px 18px 74px 22px}.quotepop .pic{width:96px;height:96px;right:12px;bottom:-24px}.quotepop p{font-size:21px}}
+/* 3. Side-by-side comparison with a "vs" badge */
+.vs{clear:both;display:grid;grid-template-columns:minmax(0,1fr) 54px minmax(0,1fr);gap:10px;align-items:start;margin:28px 0 24px;text-align:center}
+.vs .pic,.vs .ph{width:132px;height:132px;border-radius:50%;object-fit:cover;border:5px solid #fff;box-shadow:0 4px 12px rgba(70,48,42,.16);margin:0 auto 8px;display:block}
+.vs .ph{display:flex;align-items:center;justify-content:center;font-size:12px;line-height:1.3;padding:10px}
+.vs h3{margin:0 0 4px;font:800 17px/1.3 "Nunito",system-ui,sans-serif;color:var(--k)}
+.vs p{margin:0;font-size:16px;line-height:1.45}
+.vs .badge{align-self:center;margin-top:-40px;width:54px;height:54px;border-radius:50%;background:var(--k);color:#fff;
+  font:600 22px/54px "Fredoka","Nunito",system-ui,sans-serif;transform:rotate(-10deg);box-shadow:0 3px 8px rgba(70,48,42,.2)}
+@media (max-width:480px){.vs{grid-template-columns:minmax(0,1fr) 40px minmax(0,1fr)}.vs .pic,.vs .ph{width:100px;height:100px}.vs .badge{width:40px;height:40px;font-size:17px;line-height:40px}}
+.quotepop.nopic{padding-right:30px}
+@media (max-width:520px){.quotepop.nopic{padding-bottom:24px}}
+.fact.nopic{padding-left:24px;min-height:0}
+.statpop .ph.pic,.fact .ph.pic,.quotepop .ph.pic{display:flex;align-items:center;justify-content:center;padding:8px;font-size:11px;line-height:1.25;text-align:center}
+/* Transparent stickers cut from Codex sticker sheets: no frame, no shadow box */
+figure.side.stk img,img.stk,.vs img.stk{border:0;border-radius:0;box-shadow:none;background:none;object-fit:contain}
+figure.side.stk img{max-width:200px;margin:0 auto}
+.howto .stk-big{display:block;width:100%;max-width:320px;margin:0 auto}
+.stickers li img{filter:drop-shadow(0 2px 3px rgba(70,48,42,.15))}
+/* Planet stickers on the scale strip */
+.scale{height:150px}
+.scale::before{top:73px}
+.scale .pl{top:76px;display:flex;justify-content:center;align-items:center}
+.scale .pl img{flex:none;filter:drop-shadow(0 1px 2px rgba(70,48,42,.25))}
+.scale .pl.up span{bottom:calc(100% + 4px)}.scale .pl.dn span{top:calc(100% + 4px)}
+/* Owner 3/11/2026 (2): no tilted big boxes, no italic text mid-article, balanced line breaks */
+article p,article li{text-wrap:pretty}
+article h1,article h2,article h3,.quotepop p,.pull{text-wrap:balance}
+.fact{transform:none;padding-left:190px;min-height:190px}
+.fact .pic{width:150px;height:150px;left:20px;top:24px}
+.fact .lab{font-size:15px;display:inline-block;background:var(--k);color:#fff;padding:3px 12px;border-radius:999px;transform:rotate(-3deg);margin-bottom:8px}
+.fact.nopic{padding-left:24px;min-height:0}
+@media (max-width:520px){.fact{padding-left:18px;min-height:0}.fact .pic{width:100px;height:100px}}
+.quotepop p{font:700 22px/1.4 "Nunito",system-ui,sans-serif;font-style:normal}
+.quotepop::after{content:"\201D";position:absolute;bottom:-58px;right:170px;font:700 96px/1 "OLW Digits","Sorts Mill Goudy",Georgia,serif;color:var(--k);opacity:.45}
+.quotepop.nopic::after{right:18px}
+.quotepop{padding-right:190px}
+.quotepop .pic{width:160px;height:160px;right:-6px;bottom:50%;transform:translateY(50%) rotate(3deg)}
+@media (max-width:520px){.quotepop{padding:24px 18px 96px 22px}.quotepop .pic{width:110px;height:110px;bottom:-30px;transform:rotate(3deg)}.quotepop::after{display:none}.quotepop p{font-size:19px}}
+article .pull{font:700 21px/1.4 "Nunito",system-ui,sans-serif;font-style:normal}
+.statpop .num{font-size:60px;padding:2px 18px 6px}
+.statpop.nopic{grid-template-columns:1fr}
+/* Picture beside a heading and its text, balanced */
+.media{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:22px;align-items:center;margin:22px 0}
+.media.rev{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
+.media.rev>figure{order:2}
+.media figure{margin:0}
+.media figure img{width:100%;border-radius:16px;display:block}
+.media h2{margin-top:0}
+.media figcaption{font-size:14px;color:#8a7a70;margin-top:6px;text-align:center}
+@media (max-width:560px){.media,.media.rev{grid-template-columns:1fr}.media.rev>figure{order:0}}
+.quotepop::after{display:none}
+@media (max-width:520px){.quotepop{padding:24px 18px 20px 22px}.quotepop .pic{position:static;float:right;transform:rotate(3deg);width:96px;height:96px;margin:0 0 8px 12px}}
+@media (max-width:520px){.quotepop{padding:24px 116px 22px 20px}.quotepop .pic{position:absolute;float:none;top:-16px;right:-6px;bottom:auto;margin:0;width:100px;height:100px;transform:rotate(3deg)}.quotepop.nopic{padding-right:20px}}
+/* Owner 3/11/2026 (3) */
+.fact .lab{transform:none}
+/* fact note fits its text; the picture is a sticker larger than the note */
+.fact{padding:20px 22px 20px 168px;min-height:0;margin:46px 8px 40px}
+.fact .pic{width:138px;height:138px;left:14px;top:50%;transform:translateY(-50%) rotate(-4deg)}
+.fact .pic.cal{display:block;background:#fff;border:0;border-radius:10px;overflow:hidden;box-shadow:0 4px 12px rgba(70,48,42,.2);padding:0;height:120px}
+.fact .pic.cal b{display:block;background:#E0675A;color:#fff;font:800 15px/1 "Nunito",system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:10px 0}
+.fact .pic.cal i{display:block;width:46px;height:46px;margin:16px auto 0;border-radius:50%;background:#F4B942;box-shadow:0 0 0 8px rgba(244,185,66,.25)}
+@media (max-width:520px){.fact{padding:18px}.fact .pic{position:static;float:right;transform:rotate(-4deg);width:92px;height:92px;margin:-34px -6px 6px 12px}.fact .pic.cal{height:84px}.fact .pic.cal b{font-size:11px;padding:7px 0}.fact .pic.cal i{width:30px;height:30px;margin-top:12px}}
+/* number sticker on the left, words beside it, picture on the right */
+.statpop{grid-template-columns:auto minmax(0,1fr) 120px;padding:22px 22px;margin:28px 0}
+.statpop .num{position:static;transform:rotate(-3deg);align-self:center}
+.statpop.nopic{grid-template-columns:auto minmax(0,1fr)}
+.statpop .pic{margin-bottom:0}
+@media (max-width:480px){.statpop{grid-template-columns:auto minmax(0,1fr);gap:12px}.statpop .pic{display:none}.statpop .num{font-size:40px}}
+/* quotes without a picture are centred */
+.quotepop.nopic p{text-align:center}
+/* wider picture in a media row */
+.media.wide{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);align-items:start}
+.media.wide .quotepop{margin:18px 0 0;padding:18px 18px}
+.media.wide .quotepop::before{top:-28px;font-size:70px}
+.media.wide .quotepop p{font-size:18px}
+/* planet legend */
+.legend{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 14px;padding:0;margin:4px 0 22px}
+.legend li{width:64px;text-align:center;font:700 13px/1.2 "Nunito",system-ui,sans-serif}
+.legend img{display:block;width:48px;height:48px;object-fit:contain;margin:0 auto 4px;filter:drop-shadow(0 1px 2px rgba(70,48,42,.25))}
+/* salt plate picture a little smaller */
+.media.rev.small{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}
+@media (max-width:560px){.media.wide,.media.rev.small{grid-template-columns:1fr}.statpop .num{font-size:36px;padding:2px 12px 4px}}
+/* Planets sit on the paper strip, sized roughly to each other; the Sun peeks in from the left */
+.scale{height:170px;overflow:hidden;margin-left:0;margin-right:0}
+.scale::before{top:84px;left:0;right:0}
+.scale .pl{top:87px}
+.scale .pl img{width:var(--s);height:var(--s)}
+.scale .pl.sun{left:0;transform:translate(-55%,-50%)}
+.scale .pl.end span{right:-2px}
+@media (max-width:520px){.scale .pl img{width:calc(var(--s)*.72);height:calc(var(--s)*.72)}.scale .pl.sun img{width:64px;height:64px}}
+/* stickers inside number and comparison boxes: no circle frame */
+.statpop img.stk{border:0;border-radius:0;box-shadow:none;object-fit:contain;transform:none;width:130px;height:110px;filter:drop-shadow(0 2px 3px rgba(70,48,42,.18))}
+.statpop{grid-template-columns:auto minmax(0,1fr) 140px}
+.vs img.stk{filter:drop-shadow(0 2px 3px rgba(70,48,42,.18))}
+.cards2 .c img.flag{display:block;width:84px;height:auto;margin:0 0 8px;filter:drop-shadow(0 2px 3px rgba(70,48,42,.18))}
+@media (max-width:480px){.statpop img.stk{display:block;width:84px;height:70px}.statpop{grid-template-columns:auto minmax(0,1fr) 84px}}
+.statpop img.stk{width:150px;height:120px}
+.statpop{grid-template-columns:auto minmax(0,1fr) 160px}
+@media (max-width:520px){
+ .statpop{grid-template-columns:auto 1fr;grid-template-areas:"num pic" "txt txt";row-gap:12px}
+ .statpop .num{grid-area:num}.statpop img.stk,.statpop .pic{grid-area:pic;justify-self:end;display:block}
+ .statpop p{grid-area:txt}
+ .statpop img.stk{width:110px;height:80px}}
+
+/* solar walk planet positions and sizes (no inline styles: the preview viewer strips them) */
+.scale .pp1{left:0%;--s:80px}
+.scale .pp2{left:15.4%;--s:46px}
+.scale .pp3{left:25.7%;--s:52px}
+.scale .pp4{left:48.7%;--s:22px}
+.scale .pp5{left:74.7%;--s:21px}
+.scale .pp6{left:97.0%;--s:5px}
+.scale .pp7{left:0%;--s:80px}
+.scale .pp8{left:30.1%;--s:11px}
+.scale .pp9{left:47.8%;--s:26px}
+.scale .pp10{left:63.3%;--s:28px}
+.scale .pp11{left:92.0%;--s:15px}
+/* Owner 3/11/2026 (4) */
+.statpop{padding:16px 20px;gap:16px;grid-template-columns:auto minmax(0,1fr) 130px;margin:24px 0}
+.statpop .num{font-size:48px}
+.statpop img.stk{width:130px;height:96px;filter:drop-shadow(0 0 1px rgba(70,48,42,.55)) drop-shadow(0 3px 4px rgba(70,48,42,.25))}
+@media (max-width:520px){.statpop{grid-template-columns:auto 1fr}.statpop img.stk{width:104px;height:76px}.statpop .num{font-size:36px}}
+.fact .pic.cal .se{display:flex;align-items:center;justify-content:center;gap:4px;height:calc(100% - 35px)}
+.fact .pic.cal .se img:first-child{width:56px;height:56px}
+.fact .pic.cal .se img:last-child{width:22px;height:22px}
+@media (max-width:520px){.fact .pic.cal .se{height:calc(100% - 25px)}.fact .pic.cal .se img:first-child{width:36px;height:36px}.fact .pic.cal .se img:last-child{width:15px;height:15px}}
+.cards2 h3.flagh{display:flex;align-items:center;gap:10px}
+.cards2 h3.flagh img.flag{width:58px;margin:0;flex:none}
+/* Owner 3/11/2026 (5): keep the big number, shrink the outer box to fit number + words + sticker */
+.statpop{width:fit-content;max-width:100%;margin:26px auto;padding:10px 18px;gap:14px;grid-template-columns:auto minmax(0,24ch) 120px}
+.statpop .num{font-size:60px;padding:2px 18px 6px}
+.statpop img.stk{width:120px;height:90px}
+@media (max-width:520px){.statpop{width:auto;padding:12px 16px;grid-template-columns:auto 1fr}.statpop .num{font-size:46px}.statpop img.stk{width:100px;height:72px}}
+/* Owner 3/11/2026 (6) */
+/* the preview viewer adds img{max-width:100%}; planet markers sit in zero-width boxes, so lift the cap */
+.scale .pl img{max-width:none}
+ol.plain li>.lt{min-width:0}
+/* fact note: keep it compact and move the words a little away from the sticker */
+.fact{width:fit-content;max-width:600px;margin-left:auto;margin-right:auto;padding-left:184px;padding-right:28px}
+@media (max-width:520px){.fact{width:auto;padding:18px}}
+/* small Earth sticker in the solar walk: show it small so it stays sharp */
+figure.side.stk.small-earth{width:120px}
+figure.side.stk.small-earth img{max-width:120px}
+.media figure.stk img{border-radius:0;filter:drop-shadow(0 2px 3px rgba(70,48,42,.15));max-width:300px;margin:0 auto}
+
+/* fact note with a cut-out sticker on the right */
+.fact.right{padding-left:28px;padding-right:230px}
+.fact.right .pic.stk{left:auto;right:-14px;width:230px;height:auto;border:0;box-shadow:none;border-radius:0;transform:translateY(-50%);filter:drop-shadow(0 3px 4px rgba(70,48,42,.2))}
+@media (max-width:520px){.fact.right{padding:18px}.fact.right .pic.stk{position:static;float:none;display:block;width:200px;margin:-30px auto 6px;transform:none}}
+
+/* Owner 3/11/2026 (7) */
+/* quote marks live inside the text now: hide the decorative outside mark */
+.quotepop::before,.quotepop::after{display:none}
+/* cat quote: words closer to the middle, picture balanced */
+.quotepop{padding:26px 200px 26px 40px}
+.quotepop p{text-align:center}
+.quotepop .pic{width:170px;height:170px;right:6px}
+/* same-book study quote: two thirds wide, centred under the picture row */
+.quotepop.nopic.mid{width:66%;margin:26px auto 30px;padding:22px 26px}
+.quotepop.nopic.two p{font-size:19px}
+@media (max-width:560px){.quotepop{padding:22px 116px 22px 18px}.quotepop.nopic.mid{width:auto}.quotepop .pic{width:100px;height:100px;right:-6px}}
+/* January note: bigger calendar, words a little further right, even edges */
+.fact{padding-left:214px}
+.fact .pic.cal{width:168px;height:150px;left:22px}
+.fact .pic.cal b{font-size:17px;padding:11px 0}
+.fact .pic.cal .se{gap:10px;height:calc(100% - 40px);align-items:flex-end;padding-bottom:12px}
+.fact .pic.cal .se>span{display:flex;flex-direction:column;align-items:center;gap:2px}
+.fact .pic.cal .se em{font:700 12px/1 "Nunito",system-ui,sans-serif;font-style:normal;color:#6b5a52}
+.fact .pic.cal .se>span:first-child img{width:64px;height:64px}
+.fact .pic.cal .se>span:last-child img{width:24px;height:24px}
+.fact p{text-align:justify;hyphens:auto}
+.fact.right{padding-left:30px}
+@media (max-width:520px){.fact{padding:18px}.fact .pic.cal{width:118px;height:108px}.fact .pic.cal .se>span:first-child img{width:40px;height:40px}.fact .pic.cal .se>span:last-child img{width:16px;height:16px}.fact .pic.cal .se em{font-size:10px}.fact p{text-align:left}}
+/* flags: titles on two lines, both cards line up */
+.cards2 h3.flagh{align-items:center}
+.cards2 h3.flagh span{line-height:1.3}
+@media (max-width:520px){.fact .pic.cal{margin-top:4px}}
+
+/* About page: brand cover first, characters beside the early-years paragraphs */
+.hero-img.cover{border-radius:18px}
+figure.side.nv{width:110px;margin-top:-6px}
+figure.side.nv img{border:0;border-radius:0;box-shadow:none;background:none;filter:drop-shadow(0 2px 3px rgba(70,48,42,.15))}
+@media (max-width:520px){figure.side.nv{width:84px}}
+figure.side.nv{width:auto}
+figure.side.nv img{height:150px;width:auto;max-width:none}
+@media (max-width:520px){figure.side.nv img{height:110px}}
+/* Wide step pictures (e.g. newspaper hat folds): bigger, and one step per row on phones */
+.stickers.wide li img{width:100%;max-width:200px;height:140px;object-fit:contain}
+@media (max-width:640px){.stickers.wide{flex-direction:column;gap:14px}.stickers.wide li{max-width:none;display:grid;grid-template-columns:160px 1fr;column-gap:14px;align-items:center;text-align:left}.stickers.wide li img{grid-row:1 / span 2;max-width:160px;height:auto;margin:0}.stickers.wide li b{align-self:end}}
+.tile small{display:block;font-weight:600;font-size:13px;color:#7a6a62;margin-top:3px;line-height:1.3}
+.shelf-h p,.sub,.about,.hello li{text-wrap:balance}
+.hello{list-style:none;padding:0;margin:14px auto 6px;max-width:720px;text-align:center;font-size:17px;line-height:1.5}
+.hello li{margin:4px 0}
+.hello .gift{display:inline-block;margin-top:8px;background:#FFF5D6;border:2px dashed #F4B942;border-radius:16px;padding:8px 18px;font-weight:800;color:#2E5E4E}
+/* 9/11 shelf header: title + See all on one line, intro right under the title */
+.shelf-h{display:grid!important;grid-template-columns:auto 1fr;align-items:center;align-content:start!important;column-gap:14px;row-gap:0;min-height:0!important}
+.shelf-h h2{grid-row:1;grid-column:1;margin:0!important;line-height:1.15!important}
+.shelf-h .btn-all{grid-row:1;grid-column:2;justify-self:start;margin:0!important}
+.shelf-h p{grid-row:2;grid-column:1/-1;margin:4px 0 0!important;line-height:1.4}
+.home .hero p span{display:block}
+@media (max-width:640px){.shelf-h{padding-right:78px!important;column-gap:8px}.shelf-h h2{font-size:21px!important}.shelf-h .btn-all{font-size:12px;padding:3px 9px}.shelf-h p br{display:none}.shelf-h p{text-wrap:pretty}}
+@media (max-width:640px){.shelf-h p br{display:inline}.shelf-h{padding-right:66px!important}.art{width:62px!important}#parents .art{width:76px!important}.shelf-h h2{font-size:20px!important;white-space:nowrap}}
+.home .hero p span{text-wrap:balance}@media (max-width:640px){.home .hero p{font-size:15px}}
+/* 9/11 rainbow shelves (top to bottom): red, orange, yellow, green, blue, indigo, violet */
+#questions{background-color:#fdeceb!important}#questions .shelf-h h2,#questions .shelf-h h2 a{color:#c0443f!important}
+#parents{background-color:#fef0e0!important}#parents .shelf-h h2,#parents .shelf-h h2 a{color:#c2601c!important}
+#classrooms{background-color:#FEF2D8!important}#classrooms .shelf-h h2,#classrooms .shelf-h h2 a{color:#C98A00!important}
+#books{background-color:#e9f4e1!important}#books .shelf-h h2,#books .shelf-h h2 a{color:#4b7a3f!important}
+#paper{background-color:#e5f0fa!important}#paper .shelf-h h2,#paper .shelf-h h2 a{color:#2e6ba3!important}
+#gifts{background-color:#ebe9f8!important;padding:18px 18px 12px;border-radius:22px}#gifts .shelf-h h2,#gifts .shelf-h h2 a{color:#4b4a9c!important}
+#yours{background-color:#f4e9f7!important}#yours .shelf-h h2,#yours .shelf-h h2 a{color:#8a479e!important}
+.shelf{border:1.5px solid #0000000f}
+.menu a[href="strange-questions.html"],.mmenu a[href="strange-questions.html"]{background:#fdeceb!important;color:#c0443f!important;border-color:#c0443f55!important}
+.menu a[href="parents.html"],.mmenu a[href="parents.html"]{background:#fef0e0!important;color:#c2601c!important;border-color:#c2601c55!important}
+.menu a[href="classrooms.html"],.mmenu a[href="classrooms.html"]{background:#fdf6d6!important;color:#C98A00!important;border-color:#C98A0055!important}
+.menu a[href="books.html"],.mmenu a[href="books.html"]{background:#e9f4e1!important;color:#4b7a3f!important;border-color:#4b7a3f55!important}
+.menu a[href="paper-play.html"],.mmenu a[href="paper-play.html"]{background:#e5f0fa!important;color:#2e6ba3!important;border-color:#2e6ba355!important}
+.menu a:hover{filter:brightness(.95)}
+/* search box + results */
+.search{display:flex;gap:8px;max-width:560px;margin:16px auto 6px}
+.search input{flex:1;min-width:0;font:inherit;font-size:16px;padding:10px 16px;border:2px solid #2E5E4E33;border-radius:999px;background:#fff}
+.search input:focus{outline:none;border-color:#2E5E4E}
+.search button{font:inherit;font-weight:700;font-size:15px;padding:10px 16px;border:0;border-radius:999px;background:#2E5E4E;color:#fff;cursor:pointer;white-space:nowrap}
+.sres{display:grid;gap:10px;margin-top:10px}
+.sres .sr{display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid #2E5E4E22;border-radius:14px;padding:12px 16px}
+.sres .sr b{display:block;color:#2E5E4E;font-size:17px}.sres .sr small{display:inline-block;font-size:12px;font-weight:700;color:#E0675A;text-transform:uppercase;letter-spacing:.05em;margin:2px 0}
+.sres .sr span{display:block;font-size:14px;color:#6f625a}
+.sres .sr:hover{border-color:#2E5E4E}
+/* jump menu inside a section page */
+.jump{position:sticky;top:0;z-index:5;background:#FFF8ECee;backdrop-filter:blur(4px);padding:8px 0;margin:6px 0 10px;border-bottom:1px solid #0000000f}
+.jump p{margin:4px 0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.jump b{font-size:13px;color:#8a7a70;text-transform:uppercase;letter-spacing:.05em;margin-right:4px}
+.jmp{font-size:14px;font-weight:700;text-decoration:none;color:#c2601c;background:#fef0e0;border:1px solid #c2601c44;border-radius:999px;padding:5px 12px;white-space:nowrap}
+.jmp:hover{background:#c2601c;color:#fff}
+.pgrp,h2[id]{scroll-margin-top:120px}
+@media (max-width:640px){.jump p{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.jump p::-webkit-scrollbar{display:none}.jump b{font-size:11px;white-space:nowrap}.jmp{font-size:13px;padding:4px 10px}.search button{padding:10px 12px}}
+@media (max-width:640px){.jump p{flex-wrap:nowrap!important;overflow-x:auto;scrollbar-width:none}.jump p::-webkit-scrollbar{display:none}.jump b{white-space:nowrap}}.pgrp,h2[id]{scroll-margin-top:110px}
+/* See all buttons match their shelf colour */
+.shelf .btn-all{background:#fff!important;border:2px solid currentColor!important}
+#questions .btn-all{color:#c0443f!important}#parents .btn-all{color:#c2601c!important}#classrooms .btn-all{color:#C98A00!important}
+#books .btn-all{color:#4b7a3f!important}#paper .btn-all{color:#2e6ba3!important}#gifts .btn-all{color:#4b4a9c!important}#yours .btn-all{color:#8a479e!important}
+#questions .btn-all:hover,#parents .btn-all:hover,#classrooms .btn-all:hover,#books .btn-all:hover,#paper .btn-all:hover,#gifts .btn-all:hover,#yours .btn-all:hover{filter:none}
+.shelf .btn-all:hover{background:#fffaf2!important;transform:translateY(-1px)}
+
+/* section pages: subtitles stay on one line when they fit; group titles big, notes small and close */
+article .sub{text-wrap:pretty}
+.pgrp{margin-top:26px}
+.pgrp>h3{font:900 28px/1.2 "Fredoka","Nunito",system-ui,sans-serif;color:var(--k);margin:0 0 2px}
+.pgrp>h3+.sub{font-size:16px;margin:0 0 10px;opacity:.85}
+.pgrp>h2+.sub{margin-top:-4px;margin-bottom:10px}
+@media (max-width:640px){.pgrp>h3{font-size:23px}.pgrp>h3+.sub{font-size:14px}}
+
+/* computer screens: menu chips wrap onto the next line instead of hiding off the edge */
+@media (min-width:641px){.jump p{flex-wrap:wrap!important;overflow:visible}.jump b{flex-basis:100%;margin:2px 0 0}}
+@media (min-width:641px){.pgrp,h2[id]{scroll-margin-top:200px}}
+/* 9/11 owner: calmer type on section pages; only the page title is big */
+article h1{font-size:30px!important}
+article .sub{font-size:17px;line-height:1.4;margin:0 0 10px}
+.jmp{font-size:13px;padding:4px 11px}
+.jump{margin:4px 0 6px;padding:6px 0}
+.pgrp>h3{font-size:22px}
+.pgrp>h3+.sub{font-size:14px;margin:0 0 8px}
+article .search{max-width:420px;margin:8px 0 10px}
+article .search input{font-size:14px;padding:7px 14px;border-color:#2E5E4E22;background:#fffdf8}
+article .search button{font-size:13px;padding:7px 14px;background:#5f8a7c}
+@media (max-width:640px){article h1{font-size:24px!important}article .sub{font-size:15px}.pgrp>h3{font-size:19px}}
+/* 9/11 owner: home intro tighter - small gaps between lines, space only between paragraphs */
+.home .hero{margin:16px 0 6px}
+.home .hero h1{margin:0 0 6px}
+.home .hero p{font-size:15px;line-height:1.35}
+.hello{font-size:15px;line-height:1.35;margin:10px auto 4px}
+.hello li{margin:1px 0}
+.hello .gift{margin-top:6px;padding:5px 14px;font-size:14px}
+.home .search{max-width:420px;margin:10px auto 4px}
+.home .search input{font-size:14px;padding:7px 14px;border-color:#2E5E4E22;background:#fffdf8}
+.home .search button{font-size:13px;padding:7px 14px;background:#5f8a7c}
+.shelf-h p{line-height:1.3!important}
+/* 9/11 owner: menu stays inside the page column; intro sits close to the title */
+article h1{margin-bottom:4px!important}
+article h1+.sub{margin-top:0}
+.jump{margin-top:12px}
+@media (min-width:641px){.jmp{font-size:12px;padding:3px 8px}.jump p{gap:4px}}
+@media (min-width:641px){main.sec .jmp{font-size:14px;padding:4px 12px}main.sec .jump p{gap:6px}}
+/* side picture with too little text beside it: sit centred, a bit bigger (fig_solo.py) */
+figure.side.solo,figure.side.solo.left,figure.side.solo.right{float:none;transform:none;width:62%;margin:18px auto}
+figure.side.solo.sz-s{width:46%}
+figure.side.solo.stk{width:auto}
+@media (max-width:640px){figure.side.solo,figure.side.solo.sz-s{width:78%}}
+/* picture beside text, sides alternate (fig_duo.py) */
+.duo{display:flex;gap:26px;align-items:center;margin:18px 0 20px;clear:both}
+.duo.pic-left{flex-direction:row}
+.duo.pic-right{flex-direction:row-reverse}
+.duo .duo-f{flex:0 0 42%;margin:0;text-align:center}
+.duo.sz-s .duo-f{flex-basis:34%}
+.duo .duo-f img{width:100%;border-radius:14px;box-shadow:0 4px 14px rgba(0,0,0,.12);margin:0}
+.duo .duo-f.stk img{box-shadow:none;border-radius:0;max-width:220px;margin:0 auto}
+.duo .duo-f figcaption{font-size:14px;color:var(--muted,#8a7a70);margin-top:6px;font-style:italic}
+.duo .duo-t{flex:1;min-width:0}
+.duo .duo-t>:first-child{margin-top:0}.duo .duo-t>:last-child{margin-bottom:0}
+@media (max-width:640px){.duo,.duo.pic-right{flex-direction:column;gap:10px}.duo .duo-f{flex-basis:auto;width:86%}}
+/* "Discover more in the book": its own look, unlike the notes above */
+article .note.bookbox{background:linear-gradient(135deg,#E4F1EC,#F3F9F5);border:2px solid #2E5E4E;border-left-width:2px;border-radius:22px;padding:20px 22px;gap:22px!important;box-shadow:0 6px 18px rgba(46,94,78,.12)}
+article .note.bookbox img{width:170px!important;border-radius:6px 12px 12px 6px!important;box-shadow:-4px 6px 14px rgba(0,0,0,.22);transform:rotate(-3deg);margin:0}
+article .note.bookbox h3{font-family:"Fredoka","Nunito",system-ui,sans-serif;color:#2E5E4E;font-size:24px;margin:0 0 6px}
+article .note.bookbox h3::before{content:"📚 ";}
+article .note.bookbox p{color:#2b3a33}
+article .note.bookbox p:last-child a{display:inline-block;background:#2E5E4E;color:#fff;text-decoration:none;border-radius:999px;padding:9px 20px;margin-top:4px}
+article .note.bookbox p:last-child a strong{color:#fff}
+/* body text justified (owner 9/11) */
+article p:not(.pull):not(.pull-lab):not(.sub):not(.src):not(.kicker),article li{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+/* More like this + back at the end of every post (more_like_this.py) */
+.more-sec{max-width:760px;margin:34px auto 10px;padding:0 4px;clear:both}
+.more-sec h2{margin:0 0 12px}
+.more-sec .more-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.more-sec .more-grid .tile:nth-child(n+4){display:none}
+.more-sec .tile{display:block;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 3px 10px rgba(70,48,42,.1);text-decoration:none;color:inherit}
+.more-sec .tile img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block}
+.more-sec .tile span{display:block;padding:8px 10px 10px;font-weight:700;font-size:15px;line-height:1.3}
+.more-sec .back-end{margin-top:18px}
+@media (max-width:640px){.more-sec .more-grid{grid-template-columns:1fr 1fr}.more-sec .more-grid .tile:nth-child(n+3){display:none}}
+.tile em.free{display:inline-block;background:#EE7B6A;color:#fff;font-style:normal;font-weight:800;font-size:11px;letter-spacing:.05em;border-radius:999px;padding:2px 8px;margin-right:4px;vertical-align:middle}
+.more-sec h2{font-family:"Fredoka","Nunito",system-ui,sans-serif;font-weight:600;font-size:26px;color:var(--k,#2E5E4E)}
+/* section pages: show 2 rows per group, "See all" opens the rest; floating Top button (owner 9/11) */
+.list-grid:not(.open) .more-hid{display:none}
+.see-all{display:block;margin:4px auto 22px;font:800 15px/1 "Nunito",system-ui,sans-serif;color:#fff;background:var(--k,#2E5E4E);border:0;border-radius:999px;padding:11px 22px;cursor:pointer}
+.to-top{position:fixed;right:16px;bottom:18px;z-index:20;background:var(--k,#2E5E4E);color:#fff;font:800 14px/1 "Nunito",system-ui,sans-serif;text-decoration:none;border-radius:999px;padding:11px 15px;box-shadow:0 4px 12px rgba(0,0,0,.18);opacity:0;pointer-events:none;transition:opacity .2s}
+.to-top.show{opacity:1;pointer-events:auto}
+/* Curious kids topic chips stay on screen while scrolling */
+.chips:has(button){position:sticky;top:0;z-index:6;background:var(--cream,#FFF8EC);padding:8px 0;margin-top:0}
+/* group view + pages of 24 (9/11) */
+.gv-off{display:none!important}
+.gv-back{display:inline-block;margin:6px 0 14px;font:800 15px/1 "Nunito",system-ui,sans-serif;color:var(--k,#2E5E4E);background:#fff;border:2px solid var(--k,#2E5E4E);border-radius:999px;padding:9px 18px;cursor:pointer}
+.pager{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:6px 0 22px}
+.pager:empty{display:none}
+.pager button{font:800 15px/1 "Nunito",system-ui,sans-serif;min-width:42px;padding:10px 14px;border-radius:999px;border:2px solid var(--k,#2E5E4E);background:#fff;color:var(--k,#2E5E4E);cursor:pointer}
+.pager button.on{background:var(--k,#2E5E4E);color:#fff}
+.pager button:disabled{opacity:.35;cursor:default}
+/* home menu links point to home shelves (#...), keep the section colours */
+.menu a[href="#questions"]{background:#fdeceb!important;color:#c0443f!important;border-color:#c0443f55!important}
+.menu a[href="#parents"]{background:#fef0e0!important;color:#c2601c!important;border-color:#c2601c55!important}
+.menu a[href="#classrooms"]{background:#fdf6d6!important;color:#C98A00!important;border-color:#C98A0055!important}
+.menu a[href="#books"]{background:#e9f4e1!important;color:#4b7a3f!important;border-color:#4b7a3f55!important}
+.menu a[href="#paper"]{background:#e5f0fa!important;color:#2e6ba3!important;border-color:#2e6ba355!important}
+/* owner 10/11: picture beside text sits at the TOP of its block and text wraps under it full width (no tall centred block) */
+.duo{display:block!important;margin:18px 0 20px}
+.duo::after{content:"";display:table;clear:both}
+.duo .duo-f{width:40%;margin:4px 0 12px}
+.duo.sz-s .duo-f{width:32%}
+.duo.pic-right .duo-f{float:right;margin-left:24px}
+.duo.pic-left .duo-f{float:left;margin-right:24px}
+.duo .duo-t{min-width:0}
+.duo.pic-left .duo-t ul,.duo.pic-left .duo-t ol{overflow:hidden}
+@media (max-width:640px){.duo .duo-f,.duo.pic-right .duo-f,.duo.pic-left .duo-f{float:none;width:86%;margin:10px auto 14px}}
+/* owner 10/11: side pictures bigger, close to half the column */
+.duo .duo-f{width:48%}
+.duo.sz-s .duo-f{width:42%}
+figure.side:not(.solo):not(.stk):not(.nv){width:48%}
+figure.side.sz-s:not(.solo):not(.stk):not(.nv){width:42%}
+@media (max-width:640px){.duo .duo-f,.duo.sz-s .duo-f{width:86%}figure.side:not(.solo):not(.stk):not(.nv),figure.side.sz-s:not(.solo):not(.stk):not(.nv){width:86%}}
+
+/* 10/11 QA remaining items: wrapping, section openings and narrow screens */
+p,li{ text-wrap:pretty; }
+h1,h2,h3{ text-wrap:balance; }
+.section-opening h1,article.section-page>h1,.home .hero h1,article.shop.section-page .shop-hero h1{font-size:42px!important;line-height:1.15;text-transform:none}
+.section-opening .sub,.section-page>.sub,.home .hero>p,.shop .lead{text-align:left!important;hyphens:none;line-height:1.4}
+.home .hero>.cap{text-align:center!important;font-size:13px;color:#8a7a70}
+.home .hero>p:not(.cap){text-align:center!important}
+.home .hero>.menu{position:static;margin:14px auto 8px;max-width:100%;flex-wrap:nowrap;overflow-x:auto}
+.home .hero>.menu a{flex:0 0 auto}
+.home .hero h1 span{display:inline}
+.section-page .cats{margin-top:12px}
+.section-page .search{max-width:420px;margin:8px 0 14px}
+.section-page .lead{text-align:left!important}
+.section-page .shop-extras{margin:12px 0 18px}
+.section-page .shop-extras .trust{margin:8px 0}
+.section-page .shop-hero{display:block;padding:22px 24px;margin-bottom:10px}
+.section-page .shop-hero .sh-art{display:none}
+.picture-safety{display:block!important;font:italic 13px/1.4 "Nunito",sans-serif!important;color:#62584e!important;margin:6px 0 12px!important;text-align:left!important;letter-spacing:0!important;text-transform:none!important}
+.safety-figure{margin:14px 0}.safety-figure img{margin-bottom:4px}
+.chips:has(button){display:flex;flex-wrap:nowrap!important;overflow-x:auto;gap:6px;max-width:100%}
+.chips button{flex:0 0 auto}
+.jump p{flex-wrap:nowrap!important;overflow-x:auto!important}
+.jump b{flex-basis:auto!important;flex-shrink:0;white-space:nowrap}
+@media(max-width:640px){
+ .section-opening h1,article.section-page>h1,.home .hero h1,article.shop.section-page .shop-hero h1{font-size:36px!important}
+ .duo,.duo .duo-t,article figure,article table{max-width:100%;min-width:0;box-sizing:border-box}
+ .duo .duo-f,.duo.pic-left .duo-f,.duo.pic-right .duo-f,.duo.sz-s .duo-f{float:none!important;width:86%;max-width:100%;margin:10px auto 14px}
+ .duo .duo-t{width:100%;min-width:0}
+ .duo ul,.duo ol{overflow:visible!important}
+ article img{max-width:100%;height:auto}
+ .note.bookbox>div{min-width:0!important;max-width:100%}
+ .home .shelf-h{padding-right:0!important;display:flex;flex-wrap:wrap;align-items:center}
+ .home .shelf-h h2{white-space:normal!important;flex:1 1 140px}
+ .home .shelf-h p{flex-basis:100%;padding-right:0}
+ .home .shelf>.art{display:none}
+}
+
+.home>.mmenu{display:none!important}.home .hero>.menu{display:flex!important}
+
+.keep-words{white-space:nowrap;hyphens:none;-webkit-hyphens:none}
