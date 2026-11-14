@@ -735,3 +735,12 @@ article .pull,article .pull-lab,.quotepop.nopic p,.turn h2,.turn h3{text-align:c
 /* 14/11 owner: fill each line before wrapping; only avoid a lonely last word. One question per line in "Ask your kids". */
 h1,h2,h3,.tile span,article h1,article h2,article h3,.quotepop p,.pull,.shelf-h p,.sub,.about,.hello li,.home .hero p span{text-wrap:pretty!important}
 @media (max-width:640px){.shelf-h p br,.sub br,.section-opening p br{display:none}}
+/* 14/11 owner: text sits in the middle of its picture (side by side, centred) */
+@media (min-width:641px){
+ .duo{display:flex!important;gap:26px;align-items:center}
+ .duo.pic-left{flex-direction:row}.duo.pic-right{flex-direction:row-reverse}
+ .duo .duo-f,.duo.pic-left .duo-f,.duo.pic-right .duo-f{float:none!important;flex:0 0 46%;width:auto;margin:0}
+ .duo.sz-s .duo-f{flex-basis:40%}
+ .duo .duo-t{flex:1}
+ .duo::after{display:none}
+}
