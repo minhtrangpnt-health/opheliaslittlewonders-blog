@@ -747,3 +747,4 @@ h1,h2,h3,.tile span,article h1,article h2,article h3,.quotepop p,.pull,.shelf-h 
 /* 14/11: Ask your kids - wider, short answer options stay together on one line */
 article .pull{margin-left:0!important;margin-right:0!important}
 @media (min-width:641px){article .pull .opts{white-space:nowrap}}
+.duo .duo-t>h2:first-child{margin-top:0}
