@@ -718,3 +718,13 @@ h1,h2,h3{ text-wrap:balance; }
 .home>.mmenu{display:none!important}.home .hero>.menu{display:flex!important}
 
 .keep-words{white-space:nowrap;hyphens:none;-webkit-hyphens:none}
+/* 14/11 owner: wide banner like the Facebook cover; everything sits higher */
+header.site{position:relative;background:#FFF8EC;border-bottom:2px solid var(--line);padding:10px 16px 8px;display:flex;justify-content:center;align-items:center;gap:clamp(16px,3vw,40px)}
+header.site::before,header.site::after{content:"";display:block;width:72px;height:92px;background:url(anh/dau-trang-trai.jpg) center/contain no-repeat;flex:none}
+header.site::after{background-image:url(anh/dau-trang-phai.jpg)}
+.brand img{width:84px;height:84px}
+.brand .name{font-size:54px}
+.home .hero.section-opening{padding-top:4px}
+.hero h1{margin-top:14px}
+@media (max-width:640px){header.site{gap:10px;padding:10px 8px}header.site::before,header.site::after{width:62px;height:80px}.brand img{width:54px;height:54px}.brand .name{font-size:36px}.brand .tag{font-size:10px;letter-spacing:.22em}.brand{gap:8px}}
+@media (max-width:640px){.hello .hi1{white-space:nowrap;font-size:15px}.hello .hi1 .thx{display:none}}
