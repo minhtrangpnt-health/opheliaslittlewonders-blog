@@ -748,3 +748,10 @@ h1,h2,h3,.tile span,article h1,article h2,article h3,.quotepop p,.pull,.shelf-h 
 article .pull{margin-left:0!important;margin-right:0!important}
 @media (min-width:641px){article .pull .opts{white-space:nowrap}}
 .duo .duo-t>h2:first-child{margin-top:0}
+/* book clip beside its selling points (shop product pages) */
+.clipwrap{display:grid;grid-template-columns:minmax(0,380px) minmax(0,460px);justify-content:center;gap:56px;align-items:center;margin-bottom:18px}
+.clipwrap .clip-side{min-width:0}
+.clipwrap .clip-side h2:first-child{margin-top:0}
+@media (max-width:700px){.clipwrap{grid-template-columns:minmax(0,1fr);gap:8px}.clipwrap .clip{max-width:340px;margin:0 auto!important}}
+.clipwrap .val{grid-template-columns:minmax(0,1fr)}
+.clipwrap .val li{white-space:normal;overflow:visible;text-overflow:clip}
